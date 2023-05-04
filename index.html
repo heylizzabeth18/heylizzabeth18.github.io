@@ -4,9 +4,80 @@
         <title>
             My site      
         </title>
-
+            <style>
+                
+            </style>
     </head>
     <body>
-        <h1>This is my GitHub Pages website!</h1>
+        <h2> Happy Birthday Iya Ife</h2>
+
+        <div class="countdown-container">
+           <div class="countdown-el days-c">
+                <p class="big-text" id="days">0</p>
+                <span>Days</span>
+               
+            </div> 
+    
+            <div class="countdown-el hours-c">
+                <p class="big-text" id="hours">0</p>
+                <span>Hours</span>
+            </div>
+    
+            <div class="countdown-el mins-c">
+                <p class="big-text" id="mins">0</p>
+                <span>Minutes</span>
+            </div>
+    
+            <div class="countdown-el seconds-c">
+                <p class="big-text" id="seconds">0</p>
+                <span>Seconds</span>
+            </div>
+    
+            
+            
+    
+    
+        </div>
+        
+    
+    
+       
+    <main>
+        <script>
+            const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minsEl = document.getElementById('mins');
+    const secondsEl = document.getElementById('seconds');
+
+    const newYears = '20 Mar 2023'
+
+    function countdown() {
+        const newYearsDate = new Date(newYears);
+        const currentDate = new Date();
+
+        const totalseconds = (newYearsDate - currentDate) / 1000;
+
+        const days = Math.floor(totalseconds/ 3600/ 24); 
+        const hours = Math.floor(totalseconds/ 3600)% 24;
+        const mins = Math.floor(totalseconds / 60) % 60;
+        const seconds = Math.floor(totalseconds) % 60;
+        
+        
+        daysEl.innerHTML = days;
+        hoursEl.innerHTML = hours;
+        minsEl.innerHTML = mins;
+        secondsEl.innerHTML = seconds;
+
+        
+    }
+
+        
+        
+    //initial call
+    countdown();
+    //formatTime();
+    setInterval(countdown, 1000);
+        </script>
+        
     </body>
 </html>
